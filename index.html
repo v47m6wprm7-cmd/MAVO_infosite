@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MAVO</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@400;600;700;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background-color:#F8F8FC;
+  color:#4F1484;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#4F1484,#C92BF6);
+  color:white;
+  text-align:center;
+  padding:120px 20px 100px;
+}
+
+/* Grote grafische bol */
+
+.big-circle{
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle at top,#57E5CA,#3C7F88);
+  top:-180px;
+  right:-120px;
+  opacity:0.25;
+  z-index:1;
+}
+
+/* Sterren */
+
+.star{
+  position:absolute;
+  color:#57E5CA;
+  font-size:6 rem;
+  animation:float 4s ease-in-out infinite;
+  z-index:2;
+}
+
+.star1{
+  top:120px;
+  left: 200px;x;
+}
+
+.star2{
+  bottom:70px;
+  right:180px;
+  animation-delay:1.5s;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0px) rotate(0deg);
+  }
+
+  50%{
+    transform:translateY(-12px) rotate(8deg);
+  }
+
+  100%{
+    transform:translateY(0px) rotate(0deg);
+  }
+}
+
+/* =========================
+   MAVO LOGO
+========================= */
+
+.logo{
+  position:relative;
+  z-index:3;
+  margin-bottom:25px;
+}
+
+.logo span{
+  font-family:'Poppins',sans-serif;
+  font-size:7rem;
+  font-weight:800;
+  letter-spacing:8px;
+  display:inline-block;
+  background:linear-gradient(90deg,#57E5CA,#ffffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 20px rgba(255,255,255,0.15);
+}
+
+.logo-line{
+  width:140px;
+  height:6px;
+  background:#57E5CA;
+  margin:10px auto 0;
+  border-radius:20px;
+}
+
+/* Header tekst */
+
+header h1{
+  position:relative;
+  z-index:3;
+  font-family:'Poppins',sans-serif;
+  font: size 1.8rem;
+  margin-bottom:18px;
+}
+
+header p{
+  position:relative;
+  z-index:3;
+  font-size:1.15rem;
+  max-width:700px;
+  margin:auto;
+}
+
+/* =========================
+   NAVIGATIE
+========================= */
+
+nav{
+  background-color:#3C7F88;
+  padding:18px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+nav a{
+  color:white;
+  margin:0 18px;
+  text-decoration:none;
+  font-weight:600;
+  font-family:'Poppins',sans-serif;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#57E5CA;
+}
+
+/* =========================
+   SECTIES
+========================= */
+
+section{
+  max-width:1100px;
+  margin:40px auto;
+  padding:38px;
+  background:white;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+  position:relative;
+}
+
+section::before{
+  content:"";
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#57E5CA;
+  opacity:0.08;
+  top:-20px;
+  right:-20px;
+}
+
+section h2{
+  font-family:'Poppins',sans-serif;
+  color:#4F1484;
+  margin-bottom:22px;
+  font-size:2.1rem;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:linear-gradient(145deg,#F3E8FF,#ffffff);
+  border-left:6px solid #C92BF6;
+  padding:24px;
+  border-radius:18px;
+  transition:0.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:#57E5CA;
+  opacity:0.08;
+  bottom:-50px;
+  right:-50px;
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+}
+
+.card h3{
+  font-family:'Poppins',sans-serif;
+  color:#4F1484;
+  margin-bottom:10px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.button{
+  display:inline-block;
+  background-color:#C92BF6;
+  color:white;
+  padding:14px 24px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:18px;
+  transition:0.3s;
+}
+
+.button:hover{
+  background-color:#a61fd0;
+  transform:translateY(-3px);
+}
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.highlight{
+  background-color:#E8FFFB;
+  border-left:6px solid #57E5CA;
+  padding:22px;
+  border-radius:16px;
+  margin-top:25px;
+}
+
+.highlight p{
+  margin:0;
+  font-style:italic;
+  color:#3C7F88;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge{
+  display:inline-block;
+  background-color:#57E5CA;
+  color:#4F1484;
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:0.9rem;
+  margin-top:14px;
+  font-weight:bold;
+}
+
+/* =========================
+   LIJSTEN
+========================= */
+
+ul li{
+  margin-bottom:14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+  padding:45px 20px;
+  background-color:#4F1484;
+  color:white;
+  margin-top:60px;
+}
+
+footer p{
+  margin:0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .logo span{
+    font-size:3.4rem;
+  }
+
+  header h1{
+    font-size:2.4rem;
+  }
+
+  .big-circle{
+    width:600px;
+    height: 600px;px;
+  }
+
+  .star{
+    font-size:4rem;
+  }
+
+  section{
+    margin:20px;
+    padding:28px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <!-- Grafische vormen -->
+  <div class="big-circle"></div>
+
+  <div class="star star1">✦</div>
+  <div class="star star2">✦</div>
+
+  <!-- MAVO LOGO -->
+  <div class="logo">
+    <span>MAVO</span>
+    <div class="logo-line"></div>
+  </div>
+
+  <h1>MAATSCHAPPELIJKE VORMING</h1>
+
+  <p>
+    Ontdek hoe jij sterker, kritischer en bewuster
+    in de samenleving kunt staan.
+  </p>
+
+  <p style="margin-top:12px;">
+    door: Rebecca Cocquyt
+  </p>
+
+</header>
+
+<nav>
+  <a href="#intro">Welkom</a>
+  <a href="#themas">Thema’s</a>
+  <a href="#leren">Wat leer je?</a>
+  <a href="#projecten">Projecten</a>
+</nav>
+
+<section id="intro">
+
+  <h2>Welkom in het vak Maatschappelijke Vorming</h2>
+
+  <p>
+    In het vak maatschappelijke vorming leer je niet alleen
+    nieuwe kennis opbouwen, maar ontdek je ook jouw plaats
+    in de samenleving. Je leert nadenken over jezelf,
+    over anderen en over de wereld waarin je leeft.
+  </p>
+
+  <p>
+    Dit vak helpt je om bewuste keuzes te maken,
+    je mening te vormen en respectvol om te gaan
+    met verschillende ideeën en standpunten.
+  </p>
+
+  <div class="highlight">
+    <p>
+      “Sterke burgers bouwen mee aan een sterke samenleving.”
+    </p>
+  </div>
+
+</section>
+
+<section id="themas">
+
+  <h2>Thema’s die aan bod komen</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Duurzaamheid</h3>
+
+      <p>
+        Je leert verantwoord omgaan met de planeet
+        en de aarde, met aandacht voor natuur,
+        klimaat en de toekomst.
+      </p>
+
+      <div class="badge">Toekomstgericht</div>
+    </div>
+
+    <div class="card">
+      <h3>Kritisch denken</h3>
+
+      <p>
+        Je leert kritisch reflecteren over het heden
+        en de toekomst, zodat je sterker je eigen
+        mening kunt vormen.
+      </p>
+
+      <div class="badge">Reflecteren</div>
+    </div>
+
+    <div class="card">
+      <h3>Consument en maatschappij</h3>
+
+      <p>
+        Je ontwikkelt een kritische en ethische houding
+        als consument in een wereld vol keuzes,
+        reclame en beïnvloeding.
+      </p>
+
+      <div class="badge">Mediawijs</div>
+    </div>
+
+    <div class="card">
+      <h3>Samenleven</h3>
+
+      <p>
+        Je krijgt handvaten om betrouwbare kennis
+        te verwerven en je denkbeelden bij te stellen
+        door ze te vergelijken met die van anderen.
+      </p>
+
+      <div class="badge">Respect</div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="leren">
+
+  <h2>Wat brengt dit vak jou bij?</h2>
+
+  <p>
+    Maatschappelijke vorming helpt je om bewuster
+    in het leven te staan. Je leert informatie
+    beoordelen, betrouwbare bronnen herkennen
+    en openstaan voor andere perspectieven.
+  </p>
+
+  <p>
+    Zo ontwikkel je vaardigheden die je nodig hebt
+    op school, thuis, online en later in je werk
+    of verdere studies.
+  </p>
+
+  <p>
+    Je leert niet zomaar antwoorden geven,
+    maar vooral goede vragen stellen.
+    Daardoor word je sterker als leerling,
+    als burger en als persoon.
+  </p>
+
+  <a href="#" class="button">Ontdek meer</a>
+
+</section>
+
+<section id="projecten">
+
+  <h2>Voorbeelden van opdrachten en projecten</h2>
+
+  <ul>
+    <li>Een debat voeren over sociale media en beïnvloeding.</li>
+
+    
+    <li>Leren over wat stress met je doet. </li> 
+    <section id="video">
+  <h2>Bekijk deze video</h2>
+  <p>
+    Deze video geeft uitleg bij wat stress met je doet.
+  </p>
+
+<iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/5k6Y1PomG3k?si=RH53dQ8xNi7N2cTY"
+  title="video over stress"
+  frameborder="0" 
+  allowfullscreen>
+</iframe>
+</section>
+
+    <li>Onderzoeken hoe reclame jouw keuzes als consument beïnvloedt.</li>
+
+    <li>In gesprek gaan over verschillende meningen en maatschappelijke thema’s.</li>
+  </ul>
+
+</section>
+
+<footer>
+
+  <p>
+    &copy; 2026 — Rebecca Cocquyt |
+    Infosite Maatschappelijke Vorming
+  </p>
+
+</footer>
+
+</body>
+</html>
